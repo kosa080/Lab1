@@ -1,17 +1,25 @@
 package pl.lublin.wsei.java.cwiczenia;
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] arys){
-        Scanner input = new Scanner(System.in);
-        int num1=0;
-        do {
-            System.out.print("Podaj liczbe do zamiany: ");
-            num1 = input.nextInt();
-            System.out.println("Podstac szesnastkowa " + Integer.toHexString(num1));
-            System.out.println("Podstac dwojkowa " + Integer.toBinaryString(num1));
-        } while (true);
+        int[] liczby = new int[30];
+        Random rnd = new Random();
+
+        for (int i = 0; i < 30; i++)
+            liczby[i] = rnd.nextInt();
+
+        int mx = Integer.MIN_VALUE;
+        int mn = Integer.MAX_VALUE;
+        long avg = 0;
+        for (int l : liczby){
+            System.out.println(l);
+            if (l < mn) mn = 1;
+            if (l > mx) mx = 1;
+            avg += l;
+        }
+        System.out.printf("MIN = %d,MAX = %d, AVG = %f", mn,mx, (float)avg/liczby.length);
     }
 }
