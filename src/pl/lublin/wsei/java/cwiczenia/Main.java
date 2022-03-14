@@ -6,13 +6,12 @@ public class Main {
 
     public static void main(String[] arys){
         Scanner input = new Scanner(System.in);
-        int num1=0, num2=0;
+        int num1=0;
         do {
-            System.out.print("Podaj liczby, ktore mam dodac: ");
+            System.out.print("Podaj liczbe do zamiany: ");
             num1 = input.nextInt();
-            num2 = input.nextInt();
-            if ((num1 == 0) || (num2 == 0)) break;
-            System.out.printf("Wynik dodawania %d + %d = %d%n", num1, num2, num1 + num2);
+            System.out.println("Podstac szesnastkowa " + Integer.toHexString(num1));
+            System.out.println("Podstac dwojkowa " + Integer.toBinaryString(num1));
         } while (true);
     }
 }
